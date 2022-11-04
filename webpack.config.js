@@ -22,6 +22,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [new MonacoWebpackPlugin()]
+    plugins: [new MonacoWebpackPlugin({
+        languages: [],
+        
+    })]
     
 }

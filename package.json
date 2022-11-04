@@ -25,8 +25,7 @@
   "scripts": {
     "css:scss": "node-sass --output-style compressed -o dist src/scss",
     "css:autoprefixer": "postcss -u autoprefixer -r dist/*.css",
-    "css:lint": "stylelint src/scss/*.scss  --custom-syntax postcss-scss",
-    "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
+    "build:css": "npm run css:scss && npm run css:autoprefixer",
     "watch:css": "onchange \"src/scss\" -- npm run build:css",
     "serve": "browser-sync start --server \"dist\" --files \"dist\"",
     "build:images": "imagemin src/images/**/* --out-dir=dist/images",
