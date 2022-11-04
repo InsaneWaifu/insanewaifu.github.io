@@ -1,0 +1,51 @@
+{
+  "name": "parodyeditor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.19.4",
+    "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "browser-sync": "^2.27.10",
+    "htmlnano": "^2.0.2",
+    "imagemin-cli": "^7.0.0",
+    "node-sass": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^10.0.0",
+    "postcss-scss": "^4.0.5",
+    "posthtml": "^0.16.6",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-modules": "^0.9.0",
+    "stylelint": "^14.14.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+    "css:scss": "node-sass --output-style compressed -o dist src/scss",
+    "css:autoprefixer": "postcss -u autoprefixer -r dist/*.css",
+    "css:lint": "stylelint src/scss/*.scss  --custom-syntax postcss-scss",
+    "build:css": "npm run css:lint && npm run css:scss && npm run css:autoprefixer",
+    "watch:css": "onchange \"src/scss\" -- npm run build:css",
+    "serve": "browser-sync start --server \"dist\" --files \"dist\"",
+    "build:images": "imagemin src/images/**/* --out-dir=dist/images",
+    "watch:images": "onchange \"src/images\" -- npm run build:images",
+    "build:js": "webpack --mode=production",
+    "watch:js": "onchange \"src/js\" -- webpack --mode=development",
+    "build:html": "posthtml -c posthtml.json",
+    "watch:html": "onchange \"src/\" -- npm run build:html",
+    "watch": "run-p serve watch:*",
+    "build": "run-p build:*"
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.6",
+    "css-generator": "^1.0.1",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "monaco-editor": "^0.34.1",
+    "monaco-editor-webpack-plugin": "^7.0.1",
+    "style-loader": "^3.3.1",
+    "syllable": "^5.0.1"
+  }
+}
