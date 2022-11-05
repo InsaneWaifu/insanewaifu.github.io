@@ -3,3 +3,12 @@ html, body {
     width: 100%; 
     margin: 0; 
 }
+
+.cont {
+    display: flex;
+}
+
+
+.overflow-guard {
+    overflow:visible !important;
+}

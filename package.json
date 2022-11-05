@@ -45,6 +45,10 @@
     "monaco-editor": "^0.34.1",
     "monaco-editor-webpack-plugin": "^7.0.1",
     "style-loader": "^3.3.1",
-    "syllable": "^5.0.1"
+    "syllable": "^5.0.1",
+    "y-monaco": "^0.1.4",
+    "y-webrtc": "^10.2.3",
+    "y-websocket": "^1.4.5",
+    "yjs": "^13.5.42"
   }
 }
