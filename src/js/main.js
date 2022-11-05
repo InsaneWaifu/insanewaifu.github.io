@@ -14,7 +14,8 @@ const type2 = ydocument.getText('orig')
 
 const conf = {
     snippetSuggestions: "none",
-    quickSuggestions: false
+    quickSuggestions: false,
+    occurrencesHighlight: false
 }
 
 function hashCode(str) { // java String#hashCode
