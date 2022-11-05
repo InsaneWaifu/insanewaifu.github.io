@@ -117,12 +117,3 @@ function genCss(m) {
 
 original_lyrics.onDidChangeModelContent(updateSyllables)
 editor.onDidChangeModelContent(updateSyllables)
-
-editor.onDidChangeCursorPosition((e) => {
-    let line = editor.getPosition().lineNumber
-    original_lyrics.setSelection(new monaco.Range(line, 0, line, 500))
-})
-original_lyrics.onDidChangeCursorPosition((e) => {
-    let line = original_lyrics.getPosition().lineNumber
-    editor.setSelection(new monaco.Range(line, 0, line, 500))
-})
